@@ -1,0 +1,42 @@
+<header>
+  <h1>Prescrições Médicas</h1>
+  <button (click)="toggleTheme()"><span class="material-icons">dark_mode</span></button>
+</header>
+
+<main class="prescricao-container">
+  <section class="stats-cards">
+    <div class="card blue">
+      <span class="material-icons">medication</span>
+      <h3>Total de Prescrições</h3>
+      <p>{{ prescricoes.length }}</p>
+    </div>
+    <div class="card green">
+      <span class="material-icons">calendar_today</span>
+      <h3>Prescrições Ativas</h3>
+      <p>{{ prescricoesAtivas }}</p>
+    </div>
+    <div class="card orange">
+      <span class="material-icons">history</span>
+      <h3>Prescrições Históricas</h3>
+      <p>{{ prescricoesHistoricas }}</p>
+    </div>
+  </section>
+
+  <section class="prescricao-list">
+    <mat-card *ngFor="let prescricao of prescricoes" class="prescricao-card">
+      <mat-card-title>{{ prescricao.medicamento }}</mat-card-title>
+      <mat-card-subtitle>Prescrito em: {{ prescricao.data | date:'shortDate' }}</mat-card-subtitle>
+      <mat-card-content>
+        <p><strong>Dosagem:</strong> {{ prescricao.dosagem }}</p>
+        <p><strong>Instruções:</strong> {{ prescricao.instrucoes }}</p>
+        <p><strong>Status:</strong> <span [class.active]="prescricao.ativa" [class.inactive]="!prescricao.ativa">
+          {{ prescricao.ativa ? 'Ativa' : 'Inativa' }}
+        </span></p>
+      </mat-card-content>
+    </mat-card>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 SGHSS - VidaPlus</p>
+</footer>

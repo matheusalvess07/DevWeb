@@ -1,0 +1,76 @@
+/* src/app/shared/dashboard-card/dashboard-card.component.css */
+
+.dashboard-card {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  margin: 20px; /* Para fins de demonstração, pode ser removido quando usado em um layout grid */
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.card-header .card-title {
+  margin-bottom: 0;
+  font-size: 1.5em;
+  text-align: left;
+  color: #2196F3;
+}
+
+.icon-button {
+  width: 40px;
+  height: 40px;
+  min-width: unset; /* Override Angular Material default */
+  padding: 0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: none;
+  border: 1px solid #ccc;
+  color: #555;
+  background-color: transparent;
+}
+.icon-button:hover {
+  background-color: #f0f0f0;
+}
+
+.card-content {
+  padding-bottom: 0; /* Remove padding inferior padrão do mat-card-content */
+}
+
+.no-content-message {
+  text-align: center;
+  color: #757575;
+  padding: 20px;
+}
+
+.card-actions {
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  text-align: right;
+  margin-top: 20px;
+}
+
+.text-button {
+  background-color: transparent;
+  color: #2196F3;
+  box-shadow: none;
+  padding: 8px 16px;
+  text-transform: uppercase;
+}
+
+.text-button:hover {
+  background-color: rgba(33, 150, 243, 0.1);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .dashboard-card {
+      padding: 15px;
+  }
+}

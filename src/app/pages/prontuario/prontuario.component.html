@@ -1,0 +1,44 @@
+<header class="dashboard-header"></header>
+  <h1>Prontuário do Paciente</h1>
+  <div class="header-buttons">
+    <button (click)="toggleTheme()" aria-label="Toggle theme">
+      <span class="material-icons">dark_mode</span>
+    </button>
+  </div>
+
+
+<main class="dashboard-grid">
+  <div class="card blue">
+    <span class="material-icons">medical_services</span>
+    <h2>Consultas</h2>
+    <p>{{ counters.consultas }}</p>
+  </div>
+  <div class="card green">
+    <span class="material-icons">science</span>
+    <h2>Exames</h2>
+    <p>{{ counters.exames }}</p>
+  </div>
+  <div class="card orange">
+    <span class="material-icons">medication</span>
+    <h2>Prescrições</h2>
+    <p>{{ counters.prescricoes }}</p>
+  </div>
+</main>
+
+<section class="registros-list">
+  <mat-card *ngFor="let registro of registros" class="registro-card">
+    <mat-card-title>{{ registro.tipo }}</mat-card-title>
+    <mat-card-subtitle>{{ registro.data | date:'shortDate' }}</mat-card-subtitle>
+    <mat-card-content>
+      <p>{{ registro.descricao }}</p>
+    </mat-card-content>
+  </mat-card>
+</section>
+
+<section class="chart-section">
+  <canvas id="prontuarioChart"></canvas>
+</section>
+
+<footer>
+  <p>&copy; 2025 SGHSS - VidaPlus</p>
+</footer>

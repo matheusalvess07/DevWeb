@@ -1,0 +1,42 @@
+<div class="form-wrapper">
+  <mat-card>
+    <mat-card-title>Cadastro de Paciente</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="pacienteForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill" class="field">
+          <mat-label>Nome</mat-label>
+          <input matInput formControlName="nome" required>
+          <mat-error *ngIf="pacienteForm.controls['nome'].invalid && pacienteForm.controls['nome'].touched">
+            Nome é obrigatório.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="field">
+          <mat-label>CPF</mat-label>
+          <input matInput formControlName="cpf" required>
+          <mat-error *ngIf="pacienteForm.controls['cpf'].invalid && pacienteForm.controls['cpf'].touched">
+            CPF é obrigatório.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="field">
+          <mat-label>Data de Nascimento</mat-label>
+          <input matInput type="date" formControlName="dataNascimento" required>
+          <mat-error *ngIf="pacienteForm.controls['dataNascimento'].invalid && pacienteForm.controls['dataNascimento'].touched">
+            Data de nascimento é obrigatória.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="field">
+          <mat-label>Telefone</mat-label>
+          <input matInput formControlName="telefone" required>
+          <mat-error *ngIf="pacienteForm.controls['telefone'].invalid && pacienteForm.controls['telefone'].touched">
+            Telefone é obrigatório.
+          </mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="pacienteForm.invalid">Salvar</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

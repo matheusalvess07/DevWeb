@@ -1,0 +1,32 @@
+<header>
+  <h1>Telemedicina</h1>
+  <button (click)="toggleTheme()"><span class="material-icons">dark_mode</span></button>
+</header>
+
+<main class="telemedicina-container">
+  <section class="consultas-agendadas">
+    <h2>Consultas Agendadas</h2>
+    <div *ngIf="consultas.length === 0" class="empty-state">
+      Nenhuma consulta agendada.
+    </div>
+    <mat-card *ngFor="let consulta of consultas" class="consulta-card">
+      <mat-card-title>{{ consulta.paciente }}</mat-card-title>
+      <mat-card-subtitle>{{ consulta.data | date:'short' }}</mat-card-subtitle>
+      <mat-card-content>
+        <p><strong>Especialidade:</strong> {{ consulta.especialidade }}</p>
+        <p><strong>Status:</strong>
+          <span [class.confirmed]="consulta.confirmada" [class.pending]="!consulta.confirmada">
+            {{ consulta.confirmada ? 'Confirmada' : 'Pendente' }}
+          </span>
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="primary" (click)="iniciarConsulta(consulta)">Iniciar Consulta</button>
+      </mat-card-actions>
+    </mat-card>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 SGHSS - VidaPlus</p>
+</footer>

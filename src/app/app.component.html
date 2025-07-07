@@ -1,0 +1,23 @@
+<!-- Navbar superior -->
+<header style="background-color: #3f51b5; color: white; padding: 1rem;">
+  <h1>SGHSS - VidaPlus</h1>
+</header>
+
+<!-- Menu lateral + conteúdo -->
+<div style="display: flex; height: calc(100vh - 64px);">
+  <!-- Sidebar -->
+  <nav style="width: 220px; background: #f4f4f4; padding: 1rem;">
+    <ul style="list-style: none; padding: 0;">
+      <li><a routerLink="/" routerLinkActive="active">Login</a></li>
+      <li><a routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
+      <li><a routerLink="/cadastro-paciente" routerLinkActive="active">Cadastro de Paciente</a></li>
+      <li><a routerLink="/agenda" routerLinkActive="active">Agenda Médica</a></li>
+      <li><a routerLink="/prontuario" routerLinkActive="active">Prontuário</a></li>
+    </ul>
+  </nav>
+
+  <!-- Conteúdo renderizado pelo roteador -->
+  <main style="flex: 1; padding: 2rem;">
+    <router-outlet></router-outlet>
+  </main>
+</div>

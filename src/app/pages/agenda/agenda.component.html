@@ -1,0 +1,47 @@
+<header class="dashboard-header"></header>
+  <h1>Agenda de Consultas</h1>
+  <div class="header-buttons">
+    <button (click)="toggleTheme()" aria-label="Toggle theme">
+      <span class="material-icons">dark_mode</span>
+    </button>
+  </div>
+
+
+<main class="dashboard-grid">
+  <div class="card blue">
+    <span class="material-icons">schedule</span>
+    <h2>Horários Disponíveis</h2>
+    <p>{{ counters.disponiveis }}</p>
+  </div>
+  <div class="card green">
+    <span class="material-icons">event</span>
+    <h2>Consultas Agendadas</h2>
+    <p>{{ counters.agendadas }}</p>
+  </div>
+</main>
+
+<section class="chart-section">
+  <canvas id="agendaChart"></canvas>
+</section>
+
+<section class="table-section">
+  <h2>Horários</h2>
+  <table>
+    <tr>
+      <th>Hora</th>
+      <th>Status</th>
+    </tr>
+    <tr *ngFor="let horario of horarios">
+      <td>{{ horario.hora }}</td>
+      <td>
+        <span [class.badge-green]="!horario.ocupado" [class.badge-red]="horario.ocupado">
+          {{ horario.ocupado ? 'Ocupado' : 'Disponível' }}
+        </span>
+      </td>
+    </tr>
+  </table>
+</section>
+
+<footer>
+  <p>&copy; 2025 SGHSS - VidaPlus</p>
+</footer>

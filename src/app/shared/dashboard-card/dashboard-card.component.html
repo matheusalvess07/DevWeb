@@ -1,0 +1,13 @@
+<mat-card class="material-card dashboard-card">
+  <div class="card-header">
+      <h2 class="card-title">{{ title }}</h2> <button *ngIf="showAddButton" mat-icon-button color="primary" (click)="onAddClick()" class="icon-button">
+          <mat-icon>add</mat-icon>
+      </button>
+  </div>
+  <mat-card-content class="card-content">
+      <ng-content></ng-content> <p *ngIf="!hasContent" class="no-content-message">{{ noContentMessage }}</p>
+  </mat-card-content>
+  <div *ngIf="showViewAllButton" class="card-actions">
+      <button mat-button color="primary" (click)="onViewAllClick()" class="text-button">Ver Todas</button>
+  </div>
+</mat-card>

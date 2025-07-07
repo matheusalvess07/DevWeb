@@ -1,0 +1,85 @@
+.telemedicina-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 10px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #2196f3;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header button {
+  background: none;
+  border: none;
+  color: #2196f3;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.consultas-agendadas {
+  margin-top: 20px;
+}
+
+.empty-state {
+  color: #777;
+  text-align: center;
+  margin-top: 40px;
+  font-style: italic;
+}
+
+.consulta-card {
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.consulta-card:hover {
+  box-shadow: 0 8px 20px rgba(33, 150, 243, 0.5);
+}
+
+.consulta-card span.confirmed {
+  color: #4caf50;
+  font-weight: 600;
+}
+
+.consulta-card span.pending {
+  color: #f44336;
+  font-weight: 600;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+footer {
+  text-align: center;
+  padding: 10px 0;
+  color: #777;
+  font-size: 14px;
+}
+
+/* Dark Mode */
+body.dark {
+  background-color: #121212;
+  color: #ddd;
+}
+
+body.dark header {
+  color: #90caf9;
+}
+
+body.dark .consulta-card {
+  background-color: #222;
+}
+
+body.dark footer {
+  color: #aaa;
+}

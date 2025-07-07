@@ -1,0 +1,123 @@
+.prescricao-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 10px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #2196f3;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header button {
+  background: none;
+  border: none;
+  color: #2196f3;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.stats-cards {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+  justify-content: center;
+}
+
+.card {
+  flex: 1;
+  background-color: #2196f3;
+  border-radius: 12px;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(33, 150, 243, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.card.blue {
+  background-color: #2196f3;
+}
+
+.card.green {
+  background-color: #4caf50;
+}
+
+.card.orange {
+  background-color: #ff9800;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card .material-icons {
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+
+.prescricao-list {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.prescricao-card {
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  padding: 16px;
+}
+
+.prescricao-card:hover {
+  box-shadow: 0 8px 20px rgba(33, 150, 243, 0.5);
+}
+
+.prescricao-card p {
+  margin: 4px 0;
+}
+
+.prescricao-card span.active {
+  color: #4caf50;
+  font-weight: 600;
+}
+
+.prescricao-card span.inactive {
+  color: #f44336;
+  font-weight: 600;
+}
+
+footer {
+  text-align: center;
+  padding: 10px 0;
+  color: #777;
+  font-size: 14px;
+}
+
+/* Dark Mode */
+body.dark {
+  background-color: #121212;
+  color: #ddd;
+}
+
+body.dark header {
+  color: #90caf9;
+}
+
+body.dark .card {
+  box-shadow: 0 4px 10px rgba(144, 202, 249, 0.3);
+}
+
+body.dark .prescricao-card {
+  background-color: #222;
+}
+
+body.dark footer {
+  color: #aaa;
+}
