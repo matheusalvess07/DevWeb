@@ -42,25 +42,26 @@ Inicie o servidor: ng serve
 
 Acesse em: http://localhost:4200/
 
-📁 Estrutura Recomendada
+## 📁 Estrutura do Projeto
+```bash
+      src/
+      │
+      ├── app/
+      │   ├── pages/               # Módulos de tela (agenda, prontuário, etc)
+      │   ├── services/            # Serviços (ex: auth)
+      │   ├── shared/              # Componentes reutilizáveis (navbar, sidebar)
+      │   ├── app.routes.ts        # Rotas standalone
+      │   ├── app.config.ts        # Configuração principal
+      │   └── app.component.ts     # Root component
+      │
+      ├── assets/                  # Imagens e fontes
+      ├── environments/            # Ambientes
+      └── index.html               # HTML principal
+      
+```
+---
+## 📌 Planejamento Futuro
 
-src/ 
-
-├── app/
-
-    │   ├── core/   
-    │   ├── shared/      
-    │   ├── modules/     
-    │   ├── dashboard/  
-    │   └── app.module.ts
-
-├── assets/
-
-├── environments/
-
-└── index.html
-
-📌 Planejamento Futuro
  Autenticação com JWT e controle de acesso
 
  Painel administrativo completo
@@ -71,10 +72,13 @@ src/
 
  Deploy em produção com Firebase ou Vercel
 
+ ---
 👨‍💻 Autor
 Matheus Alves Da Silva – UNINTER
+---
 
 Projeto desenvolvido no curso de Análise e Desenvolvimento de Sistemas pela Uninter.
 
-📄 Licença
+## 📄 Licença
+
 Este projeto é de uso acadêmico e institucional. Todos os direitos reservados à equipe de desenvolvimento e à instituição VidaPlus.
